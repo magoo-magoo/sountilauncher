@@ -135,9 +135,13 @@ def terminal_broadcast():
 
 def terminal():
     global terminal_connected
+    print 'A'
     thread = Thread(terminal_broadcast())
+    print 'B'
     thread.setDaemon(True)
+    print 'C'
     thread.start()
+    print 'D'
 
     try:
         print '1'
