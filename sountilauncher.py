@@ -133,9 +133,13 @@ def terminal_broadcast():
 
 def terminal():
     global terminal_connected
+    print 'A'
     t = threading.Thread(target=terminal_broadcast)
+    print 'B'
     t.setDaemon(True)
+    print 'C'
     t.start()
+    print 'D'
 
     try:
         s = socket(AF_INET, SOCK_STREAM)
