@@ -131,7 +131,7 @@ def terminal():
 
     try:
         s = socket(AF_INET, SOCK_STREAM)
-        s.bind(('', tcp_port))
+        s.bind(('127.0.0.1', tcp_port))
         s.listen(1)
         conn, (remote_host, remote_port) = s.accept()
         print('connected by', remote_host, remote_port)
