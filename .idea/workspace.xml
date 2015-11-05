@@ -28,8 +28,8 @@
       <file leaf-file-name="sountilauncher.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sountilauncher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76884425">
-              <caret line="142" column="16" selection-start-line="142" selection-start-column="16" selection-end-line="142" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.6264657">
+              <caret line="137" column="17" selection-start-line="137" selection-start-column="17" selection-end-line="137" selection-end-column="17" />
               <folding>
                 <element signature="e#60#74#0" expanded="true" />
                 <element signature="e#558#562#0" expanded="true" />
@@ -41,7 +41,7 @@
                 <element signature="e#1817#2223#0" expanded="true" />
                 <element signature="e#2243#2370#0" expanded="true" />
                 <element signature="e#2403#2761#0" expanded="true" />
-                <element signature="e#3469#3598#0" expanded="true" />
+                <element signature="e#3460#3589#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -593,7 +593,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446764653648</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="sze">
+      <created>1446764734199</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1446764734199</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -714,8 +720,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sountilauncher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76884425">
-          <caret line="142" column="16" selection-start-line="142" selection-start-column="16" selection-end-line="142" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.6264657">
+          <caret line="137" column="17" selection-start-line="137" selection-start-column="17" selection-end-line="137" selection-end-column="17" />
           <folding>
             <element signature="e#60#74#0" expanded="true" />
             <element signature="e#558#562#0" expanded="true" />
@@ -727,7 +733,7 @@
             <element signature="e#1817#2223#0" expanded="true" />
             <element signature="e#2243#2370#0" expanded="true" />
             <element signature="e#2403#2761#0" expanded="true" />
-            <element signature="e#3469#3598#0" expanded="true" />
+            <element signature="e#3460#3589#0" expanded="true" />
           </folding>
         </state>
       </provider>

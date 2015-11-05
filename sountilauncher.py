@@ -135,7 +135,7 @@ def terminal():
         print '1'
         s = socket(AF_INET, SOCK_STREAM)
         print '2'
-        s.bind(('127.0.0.1', tcp_port))
+        s.bind(('', tcp_port))
         print '3'
         s.listen(1)
         print '4'
