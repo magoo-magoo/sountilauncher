@@ -132,14 +132,15 @@ def terminal():
     t.start()
 
     try:
-        print 'A'
+        print '1'
         s = socket(AF_INET, SOCK_STREAM)
-        print 'B'
+        print '2'
         s.bind(('127.0.0.1', tcp_port))
-        print 'C'
+        print '3'
         s.listen(1)
-        print 'D'
+        print '4'
         conn, (remote_host, remote_port) = s.accept()
+        print '5'
         print('connected by', remote_host, remote_port)
         terminal_connected = True
         while 1:
