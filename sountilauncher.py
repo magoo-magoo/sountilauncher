@@ -41,6 +41,15 @@ class Admin:
 def admin_start(address):
     username = raw_input('terminal username: ')
     password = getpass.getpass()
+
+    MESSAGE = "Hello, World!"
+
+    s = socket(AF_INET,  SOCK_STREAM)
+    s.connect((address, tcp_port))
+    s.send(MESSAGE)
+
+
+
     # Create a TCP/IP socket
     sock = socket(AF_INET, SOCK_STREAM)
 
@@ -88,6 +97,7 @@ def admin_listen():
     s = socket(AF_INET, SOCK_DGRAM)
     s.bind(('', udp_port))
     data, wherefrom = s.recvfrom(buffer_size, 0)
+    s.close()
     terminal_ip_address = wherefrom[0]
     print data, ' received. Connecting to : ', terminal_ip_address
     mode = admin_get_mode()
@@ -130,10 +140,15 @@ def terminal():
     thread.start()
 
     try:
+        print '1'
         s = socket(AF_INET, SOCK_STREAM)
+        print '2'
         s.bind(('127.0.0.1', tcp_port))
+        print '3'
         s.listen(1)
+        print '4'
         conn, (remote_host, remote_port) = s.accept()
+        print '5'
         print('connected by', remote_host, remote_port)
         terminal_connected = True
         while 1:
