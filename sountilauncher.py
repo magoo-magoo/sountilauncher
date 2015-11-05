@@ -5,6 +5,7 @@ import time
 import sys
 from socket import *
 import threading
+
 buffer_size = 1500
 udp_port = 50000
 tcp_port = 8989
@@ -132,7 +133,7 @@ def terminal_broadcast():
 
 def terminal():
     global terminal_connected
-    t = threading.Thread(terminal_broadcast, None, None)
+    t = threading.Thread(target=terminal_broadcast)
     t.setDaemon(True)
     t.start()
 

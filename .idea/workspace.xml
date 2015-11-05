@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e487dd0-fabe-4e1d-81cf-d55a1cafb15f" name="Default" comment="">
+    <list default="true" id="4e487dd0-fabe-4e1d-81cf-d55a1cafb15f" name="Default" comment="sze">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sountilauncher.py" afterPath="$PROJECT_DIR$/sountilauncher.py" />
     </list>
@@ -25,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.1167883">
-              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.27530363">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -63,23 +64,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sountilauncher.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sountilauncher.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sountilauncher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39865997">
-              <caret line="134" column="25" selection-start-line="134" selection-start-column="25" selection-end-line="134" selection-end-column="25" />
+            <state vertical-scroll-proportion="-24.5">
+              <caret line="137" column="13" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="13" />
               <folding>
                 <element signature="e#60#74#0" expanded="true" />
-                <element signature="e#557#561#0" expanded="true" />
-                <element signature="e#609#613#0" expanded="true" />
-                <element signature="e#646#1668#0" expanded="true" />
-                <element signature="e#1693#1697#0" expanded="true" />
-                <element signature="e#1722#1726#0" expanded="true" />
-                <element signature="e#1755#1913#0" expanded="true" />
-                <element signature="e#1940#2346#0" expanded="true" />
-                <element signature="e#2366#2493#0" expanded="true" />
-                <element signature="e#2526#2884#0" expanded="true" />
-                <element signature="e#3507#3636#0" expanded="true" />
+                <element signature="e#558#562#0" expanded="true" />
+                <element signature="e#610#614#0" expanded="true" />
+                <element signature="e#647#1669#0" expanded="true" />
+                <element signature="e#1694#1698#0" expanded="true" />
+                <element signature="e#1723#1727#0" expanded="true" />
+                <element signature="e#1756#1914#0" expanded="true" />
+                <element signature="e#1941#2347#0" expanded="true" />
+                <element signature="e#2367#2494#0" expanded="true" />
+                <element signature="e#2527#2885#0" expanded="true" />
+                <element signature="e#3503#3632#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -118,8 +119,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/sountilauncher.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -607,7 +608,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446763406385</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="sze">
+      <created>1446764045169</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1446764045169</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -707,14 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1167883">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python27/Lib/threading.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -728,21 +727,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sountilauncher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39865997">
-          <caret line="134" column="25" selection-start-line="134" selection-start-column="25" selection-end-line="134" selection-end-column="25" />
+        <state vertical-scroll-proportion="-24.5">
+          <caret line="137" column="13" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="13" />
           <folding>
             <element signature="e#60#74#0" expanded="true" />
-            <element signature="e#557#561#0" expanded="true" />
-            <element signature="e#609#613#0" expanded="true" />
-            <element signature="e#646#1668#0" expanded="true" />
-            <element signature="e#1693#1697#0" expanded="true" />
-            <element signature="e#1722#1726#0" expanded="true" />
-            <element signature="e#1755#1913#0" expanded="true" />
-            <element signature="e#1940#2346#0" expanded="true" />
-            <element signature="e#2366#2493#0" expanded="true" />
-            <element signature="e#2526#2884#0" expanded="true" />
-            <element signature="e#3507#3636#0" expanded="true" />
+            <element signature="e#558#562#0" expanded="true" />
+            <element signature="e#610#614#0" expanded="true" />
+            <element signature="e#647#1669#0" expanded="true" />
+            <element signature="e#1694#1698#0" expanded="true" />
+            <element signature="e#1723#1727#0" expanded="true" />
+            <element signature="e#1756#1914#0" expanded="true" />
+            <element signature="e#1941#2347#0" expanded="true" />
+            <element signature="e#2367#2494#0" expanded="true" />
+            <element signature="e#2527#2885#0" expanded="true" />
+            <element signature="e#3503#3632#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27530363">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
