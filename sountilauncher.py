@@ -44,11 +44,9 @@ def admin_start(address):
 
     MESSAGE = "Hello, World!"
 
-    s = socket(AF_INET,  SOCK_STREAM)
+    s = socket(AF_INET, SOCK_STREAM)
     s.connect((address, tcp_port))
     s.send(MESSAGE)
-
-
 
     # Create a TCP/IP socket
     sock = socket(AF_INET, SOCK_STREAM)
@@ -135,24 +133,15 @@ def terminal_broadcast():
 
 def terminal():
     global terminal_connected
-    print 'A'
-    thread = Thread(terminal_broadcast())
-    print 'B'
-    thread.setDaemon(True)
-    print 'C'
-    thread.start()
-    print 'D'
+    t = Thread(terminal_broadcast)
+    t.setDaemon(True)
+    t.start()
 
     try:
-        print '1'
         s = socket(AF_INET, SOCK_STREAM)
-        print '2'
         s.bind(('127.0.0.1', tcp_port))
-        print '3'
         s.listen(1)
-        print '4'
         conn, (remote_host, remote_port) = s.accept()
-        print '5'
         print('connected by', remote_host, remote_port)
         terminal_connected = True
         while 1:
