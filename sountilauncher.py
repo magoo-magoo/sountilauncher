@@ -42,12 +42,6 @@ def admin_start(address):
     username = raw_input('terminal username: ')
     password = getpass.getpass()
 
-    MESSAGE = "Hello, World!"
-
-    s = socket(AF_INET, SOCK_STREAM)
-    s.connect((address, tcp_port))
-    s.send(MESSAGE)
-
     # Create a TCP/IP socket
     sock = socket(AF_INET, SOCK_STREAM)
 
@@ -133,18 +127,18 @@ def terminal_broadcast():
 
 def terminal():
     global terminal_connected
-    print 'A'
     t = threading.Thread(target=terminal_broadcast)
-    print 'B'
     t.setDaemon(True)
-    print 'C'
     t.start()
-    print 'D'
 
     try:
+        print 'A'
         s = socket(AF_INET, SOCK_STREAM)
+        print 'B'
         s.bind(('127.0.0.1', tcp_port))
+        print 'C'
         s.listen(1)
+        print 'D'
         conn, (remote_host, remote_port) = s.accept()
         print('connected by', remote_host, remote_port)
         terminal_connected = True

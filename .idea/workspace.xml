@@ -28,20 +28,20 @@
       <file leaf-file-name="sountilauncher.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sountilauncher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6549414">
-              <caret line="141" column="12" selection-start-line="141" selection-start-column="12" selection-end-line="141" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.7118928">
+              <caret line="140" column="16" selection-start-line="140" selection-start-column="16" selection-end-line="140" selection-end-column="16" />
               <folding>
                 <element signature="e#60#74#0" expanded="true" />
                 <element signature="e#558#562#0" expanded="true" />
                 <element signature="e#610#614#0" expanded="true" />
-                <element signature="e#647#1669#0" expanded="true" />
-                <element signature="e#1694#1698#0" expanded="true" />
-                <element signature="e#1723#1727#0" expanded="true" />
-                <element signature="e#1756#1914#0" expanded="true" />
-                <element signature="e#1941#2347#0" expanded="true" />
-                <element signature="e#2367#2494#0" expanded="true" />
-                <element signature="e#2527#2885#0" expanded="true" />
-                <element signature="e#3559#3688#0" expanded="true" />
+                <element signature="e#647#1545#0" expanded="true" />
+                <element signature="e#1570#1574#0" expanded="true" />
+                <element signature="e#1599#1603#0" expanded="true" />
+                <element signature="e#1632#1790#0" expanded="true" />
+                <element signature="e#1817#2223#0" expanded="true" />
+                <element signature="e#2243#2370#0" expanded="true" />
+                <element signature="e#2403#2761#0" expanded="true" />
+                <element signature="e#3451#3580#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -581,12 +581,18 @@
       <option name="project" value="LOCAL" />
       <updated>1446764237567</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="sze">
+      <created>1446764323300</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1446764323300</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1911" y="-9" width="1938" height="1098" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14860977" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
@@ -702,20 +708,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sountilauncher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6549414">
-          <caret line="141" column="12" selection-start-line="141" selection-start-column="12" selection-end-line="141" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.7118928">
+          <caret line="140" column="16" selection-start-line="140" selection-start-column="16" selection-end-line="140" selection-end-column="16" />
           <folding>
             <element signature="e#60#74#0" expanded="true" />
             <element signature="e#558#562#0" expanded="true" />
             <element signature="e#610#614#0" expanded="true" />
-            <element signature="e#647#1669#0" expanded="true" />
-            <element signature="e#1694#1698#0" expanded="true" />
-            <element signature="e#1723#1727#0" expanded="true" />
-            <element signature="e#1756#1914#0" expanded="true" />
-            <element signature="e#1941#2347#0" expanded="true" />
-            <element signature="e#2367#2494#0" expanded="true" />
-            <element signature="e#2527#2885#0" expanded="true" />
-            <element signature="e#3559#3688#0" expanded="true" />
+            <element signature="e#647#1545#0" expanded="true" />
+            <element signature="e#1570#1574#0" expanded="true" />
+            <element signature="e#1599#1603#0" expanded="true" />
+            <element signature="e#1632#1790#0" expanded="true" />
+            <element signature="e#1817#2223#0" expanded="true" />
+            <element signature="e#2243#2370#0" expanded="true" />
+            <element signature="e#2403#2761#0" expanded="true" />
+            <element signature="e#3451#3580#0" expanded="true" />
           </folding>
         </state>
       </provider>
