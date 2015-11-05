@@ -28,8 +28,8 @@
       <file leaf-file-name="sountilauncher.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sountilauncher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37018424">
-              <caret line="94" column="28" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.19932999">
+              <caret line="121" column="34" selection-start-line="121" selection-start-column="34" selection-end-line="121" selection-end-column="34" />
               <folding>
                 <element signature="e#60#74#0" expanded="true" />
                 <element signature="e#546#550#0" expanded="true" />
@@ -38,10 +38,10 @@
                 <element signature="e#1558#1562#0" expanded="true" />
                 <element signature="e#1587#1591#0" expanded="true" />
                 <element signature="e#1620#1778#0" expanded="true" />
+                <element signature="e#1805#2227#0" expanded="true" />
                 <element signature="e#2247#2374#0" expanded="true" />
-                <element signature="e#2407#2767#0" expanded="true" />
-                <element signature="e#2790#3956#0" expanded="true" />
-                <element signature="e#3976#4105#0" expanded="true" />
+                <element signature="e#2784#3950#0" expanded="true" />
+                <element signature="e#3970#4099#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -605,7 +605,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446764765757</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="sze">
+      <created>1446766914230</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1446766914230</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -726,8 +732,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sountilauncher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37018424">
-          <caret line="94" column="28" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.19932999">
+          <caret line="121" column="34" selection-start-line="121" selection-start-column="34" selection-end-line="121" selection-end-column="34" />
           <folding>
             <element signature="e#60#74#0" expanded="true" />
             <element signature="e#546#550#0" expanded="true" />
@@ -736,10 +742,10 @@
             <element signature="e#1558#1562#0" expanded="true" />
             <element signature="e#1587#1591#0" expanded="true" />
             <element signature="e#1620#1778#0" expanded="true" />
+            <element signature="e#1805#2227#0" expanded="true" />
             <element signature="e#2247#2374#0" expanded="true" />
-            <element signature="e#2407#2767#0" expanded="true" />
-            <element signature="e#2790#3956#0" expanded="true" />
-            <element signature="e#3976#4105#0" expanded="true" />
+            <element signature="e#2784#3950#0" expanded="true" />
+            <element signature="e#3970#4099#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -119,7 +119,7 @@ def terminal_broadcast():
     try:
         while 1:
             if not terminal_connected:
-                data = repr(terminal_id)
+                data = terminal_id
                 s.sendto(data, ('<broadcast>', udp_port))
             time.sleep(2)
     except KeyboardInterrupt:
