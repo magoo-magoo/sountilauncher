@@ -6,6 +6,8 @@ import sys
 from socket import *
 import threading
 
+import subprocess
+
 buffer_size = 1500
 udp_port = 50000
 tcp_port = 8989
@@ -17,7 +19,6 @@ start = 'start'
 stop = 'stop'
 test = 'test'
 
-hello_msg = 'helloSounTiPunch'
 exit_msg = '\n\nquitting...'
 
 not_running = 'NOT RUNNING'
@@ -91,7 +92,8 @@ def admin_listen():
     data, wherefrom = s.recvfrom(buffer_size, 0)
     s.close()
     terminal_ip_address = wherefrom[0]
-    print data, ' received. Connecting to : ', terminal_ip_address
+    print 'terminal ID : ', data
+    print 'Connecting to : ', terminal_ip_address
     mode = admin_get_mode()
     if mode == start:
         admin_start(terminal_ip_address)
@@ -117,7 +119,7 @@ def terminal_broadcast():
     try:
         while 1:
             if not terminal_connected:
-                data = repr(hello_msg)
+                data = repr(terminal_id)
                 s.sendto(data, ('<broadcast>', udp_port))
             time.sleep(2)
     except KeyboardInterrupt:
@@ -132,22 +134,30 @@ def terminal():
     t.start()
 
     try:
-        print '1'
         s = socket(AF_INET, SOCK_STREAM)
-        print '2'
         s.bind(('', tcp_port))
-        print '3'
         s.listen(1)
-        print '4'
         conn, (remote_host, remote_port) = s.accept()
-        print '5'
         print('connected by', remote_host, remote_port)
         terminal_connected = True
         while 1:
             data = conn.recv(buffer_size)
-            if not data:
-                break
-            conn.send(data)
+            if data:
+                data = str(data)
+                if data == stop:
+                    print stop
+                elif data == test:
+                    print test
+                else:
+                    parts = data.split(':')
+                    if len(parts) == 3 and parts[0] == start:
+                        print 'start'
+                        username = parts[1]
+                        password = parts[2]
+                        print(username, password)
+                        proc = subprocess.Popen("/usr/bin/echo user: " + username + " pass: " + password)
+                        print "PID:", proc.pid
+                    time.sleep(3)
     except KeyboardInterrupt:
         print exit_msg
         sys.exit(0)
