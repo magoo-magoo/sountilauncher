@@ -133,7 +133,7 @@ def terminal_broadcast():
 
 def terminal():
     global terminal_connected
-    t = Thread(terminal_broadcast)
+    t = Thread(terminal_broadcast, None, None)
     t.setDaemon(True)
     t.start()
 
