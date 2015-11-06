@@ -128,9 +128,14 @@ class Admin:
             server_address = (terminal_info.ip, tcp_port)
             print >> sys.stderr, 'connecting to %s port %s' % server_address
             terminal_info.sock.connect(server_address)
+
         # Send data
-        print >> sys.stderr, 'sending "%s"' % message
-        terminal_info.sock.sendall(message)
+        try:
+            print >> sys.stderr, 'sending "%s"' % message
+            terminal_info.sock.sendall(message)
+        except socket.error:
+            terminal_info.sock.close()
+            terminal_info.sock = None
 
     def admin_start(self, terminal_info):
         """
