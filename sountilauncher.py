@@ -4,6 +4,8 @@ import shlex
 import time
 # noinspection PyUnresolvedReferences
 import sys
+from pprint import pprint
+from signal import SIGINT
 from socket import *
 import threading
 import subprocess
@@ -18,6 +20,7 @@ terminal_name = 'terminal'
 start = 'start'
 stop = 'stop'
 test = 'test'
+list_cmd = 'list'
 
 exit_msg = '\n\nquitting...'
 
@@ -30,12 +33,14 @@ class TerminalInfo:
         self.id = _id
         self.ip = _ip
         self.status = _status
+        self.sock = None
 
 
 class Terminal:
     def __init__(self, _id):
         self.id = _id
         self.connected = False
+        self.process = None
 
     def terminal(self):
         t = threading.Thread(target=self.terminal_broadcast)
@@ -53,8 +58,10 @@ class Terminal:
                 data = conn.recv(buffer_size)
                 if data:
                     data = str(data)
-                    if data == stop:
-                        print stop
+                    if data == stop and self.process is not None:
+                        self.process.send_signal(SIGINT)
+                        self.process.terminate()
+                        self.process = None
                     elif data == test:
                         print test
                     else:
@@ -64,8 +71,9 @@ class Terminal:
                             username = parts[1]
                             password = parts[2]
                             print(username, password)
-                            proc = subprocess.Popen(shlex.split("/bin/echo \"user: " + username + " pass: " + password + "\""))
-                            print "PID:", proc.pid
+                            self.process = subprocess.Popen(
+                                shlex.split("/bin/echo \"user: " + username + " pass: " + password + "\""))
+                            print "PID:", self.process.pid
                 time.sleep(0.5)
         except KeyboardInterrupt:
             print exit_msg
@@ -92,41 +100,31 @@ class Admin:
     def __init__(self):
         self.terminal_map = dict()
 
+    def send(self, term, message):
+
+        if term.sock is None:
+            # Create a TCP/IP socket
+            term.sock = socket(AF_INET, SOCK_STREAM)
+
+        # Connect the socket to the port where the server is listening
+        server_address = (term.ip, tcp_port)
+        print >> sys.stderr, 'connecting to %s port %s' % server_address
+        term.sock.connect(server_address)
+        # Send data
+        print >> sys.stderr, 'sending "%s"' % message
+        term.sock.sendall(message)
+
     def admin_start(self, term_id):
         username = raw_input('terminal username: ')
         password = getpass.getpass()
+        message = start + ':' + username + ':' + password
 
         try:
             term = self.terminal_map[term_id]
         except KeyError:
             print term_id, ' not found'
             return
-        # Create a TCP/IP socket
-        sock = socket(AF_INET, SOCK_STREAM)
-
-        # Connect the socket to the port where the server is listening
-        server_address = (term.ip, tcp_port)
-        print >> sys.stderr, 'connecting to %s port %s' % server_address
-        sock.connect(server_address)
-        try:
-
-            # Send data
-            message = start + ':' + username + ':' + password
-            print >> sys.stderr, 'sending "%s"' % message
-            sock.sendall(message)
-
-            # # Look for the response
-            # amount_received = 0
-            # amount_expected = len(message)
-            #
-            # while amount_received < amount_expected:
-            #     data = sock.recv(16)
-            #     amount_received += len(data)
-            #     print >>sys.stderr, 'received "%s"' % data
-
-        finally:
-            print >> sys.stderr, 'closing socket'
-            sock.close()
+        self.send(term, message)
 
     def admin_stop(self):
         pass
@@ -137,6 +135,8 @@ class Admin:
     def admin_get_mode(self):
         while True:
             mode = str(raw_input(start + '/' + stop + '/' + test + ': '))
+            if mode == list_cmd:
+                return mode, None
             if len(mode.split(':')) == 2:
                 term_id = mode.split(':')[1]
                 mode = mode.split(':')[0]
@@ -162,6 +162,8 @@ class Admin:
         try:
             while 1:
                 mode, term_id = self.admin_get_mode()
+                if mode == list_cmd:
+                    pprint(self.terminal_map)
                 if mode == start:
                     self.admin_start(term_id)
                 elif mode == stop:
