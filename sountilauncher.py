@@ -25,13 +25,72 @@ not_running = 'NOT RUNNING'
 running = 'RUNNING'
 
 terminal_status = not_running
-terminal_id = None
-terminal_connected = False
+
+#
+terminal_map = dict()
+
+
+class TerminalInfo:
+    def __init__(self, _id, _ip, _status):
+        self.id = _id
+        self.ip = _ip
+        self.status = _status
 
 
 class Terminal:
-    def __init__(self):
-        pass
+    def __init__(self, _id):
+        self.id = _id
+        self.connected = False
+
+    def terminal(self):
+        t = threading.Thread(target=self.terminal_broadcast)
+        t.setDaemon(True)
+        t.start()
+
+        s = socket(AF_INET, SOCK_STREAM)
+        s.bind(('', tcp_port))
+        s.listen(1)
+        try:
+            conn, (remote_host, remote_port) = s.accept()
+            print('connected by', remote_host, remote_port)
+            self.connected = True
+            while 1:
+                data = conn.recv(buffer_size)
+                if data:
+                    data = str(data)
+                    if data == stop:
+                        print stop
+                    elif data == test:
+                        print test
+                    else:
+                        parts = data.split(':')
+                        if len(parts) == 3 and parts[0] == start:
+                            print 'start'
+                            username = parts[1]
+                            password = parts[2]
+                            print(username, password)
+                            proc = subprocess.Popen("/usr/bin/echo user: " + username + " pass: " + password)
+                            print "PID:", proc.pid
+                        time.sleep(3)
+        except KeyboardInterrupt:
+            print exit_msg
+            sys.exit(0)
+        finally:
+            s.close()
+
+    def terminal_broadcast(self):
+        s = socket(AF_INET, SOCK_DGRAM)
+        s.bind(('', 0))
+        s.setsockopt(SOL_SOCKET, SO_BROADCAST, 1)
+        try:
+            while 1:
+                if not self.connected:
+                    data = self.id
+                    s.sendto(data, ('<broadcast>', udp_port))
+                time.sleep(2)
+        except KeyboardInterrupt:
+            print exit_msg
+            sys.exit(0)
 
 
 class Admin:
@@ -112,57 +171,6 @@ def admin():
         print exit_msg
 
 
-def terminal_broadcast():
-    s = socket(AF_INET, SOCK_DGRAM)
-    s.bind(('', 0))
-    s.setsockopt(SOL_SOCKET, SO_BROADCAST, 1)
-    try:
-        while 1:
-            if not terminal_connected:
-                data = terminal_id
-                s.sendto(data, ('<broadcast>', udp_port))
-            time.sleep(2)
-    except KeyboardInterrupt:
-        print exit_msg
-        sys.exit(0)
-
-
-def terminal():
-    global terminal_connected
-    t = threading.Thread(target=terminal_broadcast)
-    t.setDaemon(True)
-    t.start()
-
-    try:
-        s = socket(AF_INET, SOCK_STREAM)
-        s.bind(('', tcp_port))
-        s.listen(1)
-        conn, (remote_host, remote_port) = s.accept()
-        print('connected by', remote_host, remote_port)
-        terminal_connected = True
-        while 1:
-            data = conn.recv(buffer_size)
-            if data:
-                data = str(data)
-                if data == stop:
-                    print stop
-                elif data == test:
-                    print test
-                else:
-                    parts = data.split(':')
-                    if len(parts) == 3 and parts[0] == start:
-                        print 'start'
-                        username = parts[1]
-                        password = parts[2]
-                        print(username, password)
-                        proc = subprocess.Popen("/usr/bin/echo user: " + username + " pass: " + password)
-                        print "PID:", proc.pid
-                    time.sleep(3)
-    except KeyboardInterrupt:
-        print exit_msg
-        sys.exit(0)
-
-
 def usage():
     sys.stdout = sys.stderr
     print 'Usage: ', sys.argv[0], ' ', admin_name
@@ -174,8 +182,8 @@ if __name__ == '__main__':
         if sys.argv[1] == admin_name:
             admin()
         elif len(sys.argv) == 3 and sys.argv[1] == terminal_name:
-            terminal_id = sys.argv[2]
-            terminal()
+            term = Terminal(sys.argv[2])
+            term.terminal()
         else:
             usage()
     else:
