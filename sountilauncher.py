@@ -84,6 +84,7 @@ class Terminal:
                 if not self.connected:
                     data = self.id
                     s.sendto(data, ('<broadcast>', udp_port))
+                    print 'broadcast: ' + data, ' sent.'
                 time.sleep(2)
         except KeyboardInterrupt:
             print exit_msg
@@ -145,6 +146,7 @@ class Admin:
         while 1:
             s = socket(AF_INET, SOCK_DGRAM)
             s.bind(('', udp_port))
+            print 'trying to receive broadcast data...'
             data, wherefrom = s.recvfrom(buffer_size, 0)
             s.close()
             terminal_ip_address = wherefrom[0]
