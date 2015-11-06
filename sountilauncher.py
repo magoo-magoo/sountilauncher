@@ -63,6 +63,7 @@ class Terminal:
             conn, (remote_host, remote_port) = s.accept()
             print('connected by', remote_host, remote_port)
             while 1:
+                conn.sendall("")
                 data = conn.recv(buffer_size)
                 if data:
                     data = str(data)
@@ -134,6 +135,7 @@ class Admin:
             print >> sys.stderr, 'sending "%s"' % message
             terminal_info.sock.sendall(message)
         except socket.error:
+            print >> sys.stderr, 'sending error'
             terminal_info.sock.close()
             terminal_info.sock = None
 
@@ -189,9 +191,12 @@ class Admin:
             terminal_ip_address = wherefrom[0]
             # print 'terminal ID : ', data, ' - ip  : ', terminal_ip_address
             term_info = TerminalInfo(terminal_id, terminal_ip_address, terminal_status)
-            if terminal_id in self.terminal_map:
-                term_info.sock = self.terminal_map[terminal_id].sock
-            self.terminal_map[terminal_id] = term_info
+            if self.terminal_map.has_key(terminal_id):
+                self.terminal_map[terminal_id].id = terminal_id
+                self.terminal_map[terminal_id].ip = terminal_ip_address
+                self.terminal_map[terminal_id].status = terminal_status
+            else:
+                self.terminal_map[terminal_id] = term_info
 
     def admin(self):
         t = threading.Thread(target=self.admin_listen)
@@ -214,7 +219,6 @@ class Admin:
                     self.admin_stop(terminal_info)
                 elif mode == test:
                     self.admin_test(terminal_info)
-                time.sleep(1)
         except KeyboardInterrupt:
             print exit_msg
 
