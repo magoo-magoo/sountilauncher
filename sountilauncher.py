@@ -132,26 +132,29 @@ class Admin:
         print >> sys.stderr, 'sending "%s"' % message
         terminal_info.sock.sendall(message)
 
-    def admin_start(self, term_id):
+    def admin_start(self, terminal_info):
         """
 
-        :type term_id: str
+        :type terminal_info: TerminalInfo
         """
         username = raw_input('terminal username: ')
         password = getpass.getpass()
         message = start + ':' + username + ':' + password
 
-        try:
-            term = self.terminal_map[term_id]
-        except KeyError:
-            print term_id, ' not found'
-            return
-        self.send(term, message)
+        self.send(terminal_info, message)
 
-    def admin_stop(self):
+    def admin_stop(self, terminal_info):
+        """
+
+        :type terminal_info: TerminalInfo
+        """
         pass
 
-    def admin_test(self):
+    def admin_test(self, terminal_info):
+        """
+
+        :type terminal_info: TerminalInfo
+        """
         pass
 
     @staticmethod
@@ -191,14 +194,19 @@ class Admin:
         try:
             while 1:
                 mode, term_id = self.admin_get_mode()
+                try:
+                    terminal_info = self.terminal_map[term_id]
+                except KeyError:
+                    print term_id, ' not found'
+                    continue
                 if mode == list_cmd:
                     pprint(self.terminal_map)
                 if mode == start:
-                    self.admin_start(term_id)
+                    self.admin_start(terminal_info)
                 elif mode == stop:
-                    self.admin_stop()
+                    self.admin_stop(terminal_info)
                 elif mode == test:
-                    self.admin_test()
+                    self.admin_test(terminal_info)
                 time.sleep(1)
         except KeyboardInterrupt:
             print exit_msg
