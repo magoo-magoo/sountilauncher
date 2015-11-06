@@ -1,5 +1,6 @@
 # Receive UDP packets transmitted by a broadcasting service
 import getpass
+import shlex
 import time
 # noinspection PyUnresolvedReferences
 import sys
@@ -63,7 +64,7 @@ class Terminal:
                             username = parts[1]
                             password = parts[2]
                             print(username, password)
-                            proc = subprocess.Popen("/bin/echo \"user: " + username + " pass: " + password + "\"")
+                            proc = subprocess.Popen(shlex.split("/bin/echo \"user: " + username + " pass: " + password + "\""))
                             print "PID:", proc.pid
                 time.sleep(0.5)
         except KeyboardInterrupt:
