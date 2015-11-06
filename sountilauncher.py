@@ -63,7 +63,7 @@ class Terminal:
                             username = parts[1]
                             password = parts[2]
                             print(username, password)
-                            proc = subprocess.Popen("/usr/bin/echo user: " + username + " pass: " + password)
+                            proc = subprocess.Popen("/bin/echo \"user: " + username + " pass: " + password + "\"")
                             print "PID:", proc.pid
                 time.sleep(0.5)
         except KeyboardInterrupt:
