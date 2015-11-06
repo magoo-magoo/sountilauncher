@@ -74,7 +74,7 @@ class Terminal:
                             password = parts[2]
                             print(username, password)
                             self.process = subprocess.Popen(
-                                shlex.split("/bin/echo \"user: " + username + " pass: " + password + "\""))
+                                shlex.split("/usr/bin/yes \"user: " + username + " pass: " + password + "\""))
                             print "PID:", self.process.pid
                 time.sleep(0.5)
         except KeyboardInterrupt:
