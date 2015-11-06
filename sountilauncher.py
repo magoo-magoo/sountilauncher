@@ -8,7 +8,7 @@ import threading
 import subprocess
 
 buffer_size = 1500
-udp_port = 50000
+udp_port = 56921
 tcp_port = 8989
 
 admin_name = 'admin'
@@ -22,9 +22,6 @@ exit_msg = '\n\nquitting...'
 
 not_running = 'NOT RUNNING'
 running = 'RUNNING'
-
-
-#
 
 
 class TerminalInfo:
@@ -81,11 +78,10 @@ class Terminal:
         s.setsockopt(SOL_SOCKET, SO_BROADCAST, 1)
         try:
             while 1:
-                if not self.connected:
-                    data = self.id
-                    s.sendto(data, ('<broadcast>', udp_port))
-                    print 'broadcast: ' + data, ' sent.'
-                time.sleep(2)
+                data = self.id
+                s.sendto(data, ('<broadcast>', udp_port))
+                print 'broadcast: ' + data, ' sent.'
+                time.sleep(10)
         except KeyboardInterrupt:
             print exit_msg
             sys.exit(0)
@@ -99,7 +95,11 @@ class Admin:
         username = raw_input('terminal username: ')
         password = getpass.getpass()
 
-        term = self.terminal_map[term_id]
+        try:
+            term = self.terminal_map[term_id]
+        except KeyError:
+            print term_id, ' not found'
+            return
         # Create a TCP/IP socket
         sock = socket(AF_INET, SOCK_STREAM)
 
@@ -137,18 +137,17 @@ class Admin:
         while True:
             mode = str(raw_input(start + '/' + stop + '/' + test + ': '))
             if len(mode.split(':')) == 2:
-                mode = mode.split(':')[0]
                 term_id = mode.split(':')[1]
+                mode = mode.split(':')[0]
                 if mode == start or mode == stop or mode == test:
                     return mode, term_id
 
     def admin_listen(self):
+        s = socket(AF_INET, SOCK_DGRAM)
+        s.bind(('', udp_port))
+
         while 1:
-            s = socket(AF_INET, SOCK_DGRAM)
-            s.bind(('', udp_port))
-            print 'trying to receive broadcast data...'
             data, wherefrom = s.recvfrom(buffer_size, 0)
-            s.close()
             terminal_ip_address = wherefrom[0]
             print 'terminal ID : ', data, ' - ip  : ', terminal_ip_address
             term_info = TerminalInfo(data, terminal_ip_address, not_running)

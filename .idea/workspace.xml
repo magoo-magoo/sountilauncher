@@ -28,21 +28,21 @@
       <file leaf-file-name="sountilauncher.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sountilauncher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49615976">
-              <caret line="86" column="55" selection-start-line="86" selection-start-column="55" selection-end-line="86" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.33333334">
+              <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
               <folding>
                 <element signature="e#60#74#0" expanded="true" />
-                <element signature="e#495#560#0" expanded="true" />
-                <element signature="e#616#660#0" expanded="true" />
-                <element signature="e#694#1978#0" expanded="true" />
-                <element signature="e#2517#2543#0" expanded="true" />
-                <element signature="e#2589#3621#0" expanded="true" />
-                <element signature="e#3657#3661#0" expanded="true" />
-                <element signature="e#3697#3701#0" expanded="true" />
-                <element signature="e#3741#4062#0" expanded="true" />
-                <element signature="e#4100#4597#0" expanded="true" />
-                <element signature="e#4628#5093#0" expanded="true" />
-                <element signature="e#5113#5242#0" expanded="true" />
+                <element signature="e#491#556#0" expanded="true" />
+                <element signature="e#612#656#0" expanded="true" />
+                <element signature="e#690#1974#0" expanded="true" />
+                <element signature="e#2463#2489#0" expanded="true" />
+                <element signature="e#2535#3668#0" expanded="true" />
+                <element signature="e#3704#3708#0" expanded="true" />
+                <element signature="e#3744#3748#0" expanded="true" />
+                <element signature="e#3788#4109#0" expanded="true" />
+                <element signature="e#4147#4559#0" expanded="true" />
+                <element signature="e#4590#5055#0" expanded="true" />
+                <element signature="e#5075#5204#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -87,10 +87,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1050" />
+    <option name="x" value="2186" />
+    <option name="y" value="41" />
+    <option name="width" value="1527" />
+    <option name="height" value="1032" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -650,11 +650,17 @@
       <option name="project" value="LOCAL" />
       <updated>1446814258972</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="pzajf">
+      <created>1446815389206</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1446815389206</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <frame x="2186" y="41" width="1527" height="1032" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -662,17 +668,17 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40939596" sideWeight="0.49815303" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20557491" sideWeight="0.5066033" order="24" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20996441" sideWeight="0.5074224" order="24" side_tool="true" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32981783" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28455284" sideWeight="0.4981511" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20557491" sideWeight="0.49339673" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20996441" sideWeight="0.4925776" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41323107" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26952696" sideWeight="0.50184894" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35762224" sideWeight="0.49815303" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47075742" sideWeight="0.5" order="23" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29688326" sideWeight="0.50569105" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37921727" sideWeight="0.50569105" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="PlantUML" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32981783" sideWeight="0.5" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45541707" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -776,21 +782,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sountilauncher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49615976">
-          <caret line="86" column="55" selection-start-line="86" selection-start-column="55" selection-end-line="86" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
           <folding>
             <element signature="e#60#74#0" expanded="true" />
-            <element signature="e#495#560#0" expanded="true" />
-            <element signature="e#616#660#0" expanded="true" />
-            <element signature="e#694#1978#0" expanded="true" />
-            <element signature="e#2517#2543#0" expanded="true" />
-            <element signature="e#2589#3621#0" expanded="true" />
-            <element signature="e#3657#3661#0" expanded="true" />
-            <element signature="e#3697#3701#0" expanded="true" />
-            <element signature="e#3741#4062#0" expanded="true" />
-            <element signature="e#4100#4597#0" expanded="true" />
-            <element signature="e#4628#5093#0" expanded="true" />
-            <element signature="e#5113#5242#0" expanded="true" />
+            <element signature="e#491#556#0" expanded="true" />
+            <element signature="e#612#656#0" expanded="true" />
+            <element signature="e#690#1974#0" expanded="true" />
+            <element signature="e#2463#2489#0" expanded="true" />
+            <element signature="e#2535#3668#0" expanded="true" />
+            <element signature="e#3704#3708#0" expanded="true" />
+            <element signature="e#3744#3748#0" expanded="true" />
+            <element signature="e#3788#4109#0" expanded="true" />
+            <element signature="e#4147#4559#0" expanded="true" />
+            <element signature="e#4590#5055#0" expanded="true" />
+            <element signature="e#5075#5204#0" expanded="true" />
           </folding>
         </state>
       </provider>
