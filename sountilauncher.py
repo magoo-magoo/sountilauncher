@@ -102,7 +102,7 @@ class Terminal:
                     self.status = not_running
                 data = self.id + ':' + self.status
                 s.sendto(data, ('<broadcast>', udp_port))
-                print 'broadcast: ' + data, ' sent.'
+                # print 'broadcast: ' + data, ' sent.'
                 time.sleep(10)
         except KeyboardInterrupt:
             print exit_msg
@@ -124,11 +124,10 @@ class Admin:
         if terminal_info.sock is None:
             # Create a TCP/IP socket
             terminal_info.sock = socket(AF_INET, SOCK_STREAM)
-
-        # Connect the socket to the port where the server is listening
-        server_address = (terminal_info.ip, tcp_port)
-        print >> sys.stderr, 'connecting to %s port %s' % server_address
-        terminal_info.sock.connect(server_address)
+            # Connect the socket to the port where the server is listening
+            server_address = (terminal_info.ip, tcp_port)
+            print >> sys.stderr, 'connecting to %s port %s' % server_address
+            terminal_info.sock.connect(server_address)
         # Send data
         print >> sys.stderr, 'sending "%s"' % message
         terminal_info.sock.sendall(message)
@@ -183,8 +182,10 @@ class Admin:
             terminal_id = data.split(':')[0]
             terminal_status = data.split(':')[1]
             terminal_ip_address = wherefrom[0]
-            print 'terminal ID : ', data, ' - ip  : ', terminal_ip_address
+            # print 'terminal ID : ', data, ' - ip  : ', terminal_ip_address
             term_info = TerminalInfo(terminal_id, terminal_ip_address, terminal_status)
+            if terminal_id in self.terminal_map:
+                term_info.sock = self.terminal_map[terminal_id].sock
             self.terminal_map[terminal_id] = term_info
             time.sleep(0.5)
 
