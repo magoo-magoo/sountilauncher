@@ -28,21 +28,21 @@
       <file leaf-file-name="sountilauncher.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sountilauncher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334">
-              <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.47571188">
+              <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
               <folding>
                 <element signature="e#60#74#0" expanded="true" />
                 <element signature="e#491#556#0" expanded="true" />
                 <element signature="e#612#656#0" expanded="true" />
-                <element signature="e#690#1974#0" expanded="true" />
-                <element signature="e#2463#2489#0" expanded="true" />
-                <element signature="e#2535#3668#0" expanded="true" />
-                <element signature="e#3704#3708#0" expanded="true" />
-                <element signature="e#3744#3748#0" expanded="true" />
-                <element signature="e#3788#4109#0" expanded="true" />
-                <element signature="e#4147#4559#0" expanded="true" />
-                <element signature="e#4590#5055#0" expanded="true" />
-                <element signature="e#5075#5204#0" expanded="true" />
+                <element signature="e#2012#2409#0" expanded="true" />
+                <element signature="e#2457#2483#0" expanded="true" />
+                <element signature="e#2529#3676#0" expanded="true" />
+                <element signature="e#3712#3716#0" expanded="true" />
+                <element signature="e#3752#3756#0" expanded="true" />
+                <element signature="e#3796#4117#0" expanded="true" />
+                <element signature="e#4155#4567#0" expanded="true" />
+                <element signature="e#4598#5093#0" expanded="true" />
+                <element signature="e#5113#5242#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -656,7 +656,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446815389206</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="pzajf">
+      <created>1446830808981</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1446830808981</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -668,7 +674,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40939596" sideWeight="0.49815303" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20996441" sideWeight="0.5074224" order="24" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20996441" sideWeight="0.5074224" order="24" side_tool="true" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32981783" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28455284" sideWeight="0.4981511" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -698,6 +704,14 @@
       <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="22" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -782,21 +796,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sountilauncher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.47571188">
+          <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
           <folding>
             <element signature="e#60#74#0" expanded="true" />
             <element signature="e#491#556#0" expanded="true" />
             <element signature="e#612#656#0" expanded="true" />
-            <element signature="e#690#1974#0" expanded="true" />
-            <element signature="e#2463#2489#0" expanded="true" />
-            <element signature="e#2535#3668#0" expanded="true" />
-            <element signature="e#3704#3708#0" expanded="true" />
-            <element signature="e#3744#3748#0" expanded="true" />
-            <element signature="e#3788#4109#0" expanded="true" />
-            <element signature="e#4147#4559#0" expanded="true" />
-            <element signature="e#4590#5055#0" expanded="true" />
-            <element signature="e#5075#5204#0" expanded="true" />
+            <element signature="e#2012#2409#0" expanded="true" />
+            <element signature="e#2457#2483#0" expanded="true" />
+            <element signature="e#2529#3676#0" expanded="true" />
+            <element signature="e#3712#3716#0" expanded="true" />
+            <element signature="e#3752#3756#0" expanded="true" />
+            <element signature="e#3796#4117#0" expanded="true" />
+            <element signature="e#4155#4567#0" expanded="true" />
+            <element signature="e#4598#5093#0" expanded="true" />
+            <element signature="e#5113#5242#0" expanded="true" />
           </folding>
         </state>
       </provider>

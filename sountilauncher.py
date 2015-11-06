@@ -65,7 +65,7 @@ class Terminal:
                             print(username, password)
                             proc = subprocess.Popen("/usr/bin/echo user: " + username + " pass: " + password)
                             print "PID:", proc.pid
-                        time.sleep(3)
+                time.sleep(0.5)
         except KeyboardInterrupt:
             print exit_msg
             sys.exit(0)
@@ -110,7 +110,7 @@ class Admin:
         try:
 
             # Send data
-            message = username + ':' + password
+            message = start + ':' + username + ':' + password
             print >> sys.stderr, 'sending "%s"' % message
             sock.sendall(message)
 
@@ -167,6 +167,7 @@ class Admin:
                     self.admin_stop()
                 elif mode == test:
                     self.admin_test()
+                time.sleep(1)
         except KeyboardInterrupt:
             print exit_msg
 
