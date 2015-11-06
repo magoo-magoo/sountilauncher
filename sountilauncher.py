@@ -35,12 +35,15 @@ class TerminalInfo:
         self.status = _status
         self.sock = None
 
+    def __repr__(self):
+        return "(" + str(self.ip) +", " + str(self.status) + ")"
+
 
 class Terminal:
     def __init__(self, _id):
         self.id = _id
-        self.connected = False
         self.process = None
+        self.status = not_running
 
     def terminal(self):
         t = threading.Thread(target=self.terminal_broadcast)
@@ -53,7 +56,6 @@ class Terminal:
         try:
             conn, (remote_host, remote_port) = s.accept()
             print('connected by', remote_host, remote_port)
-            self.connected = True
             while 1:
                 data = conn.recv(buffer_size)
                 if data:
@@ -87,7 +89,11 @@ class Terminal:
         s.setsockopt(SOL_SOCKET, SO_BROADCAST, 1)
         try:
             while 1:
-                data = self.id
+                if self.process is not None and self.process.poll() is None:
+                    self.status = running
+                else:
+                    self.status = not_running
+                data = self.id + ':' + self.status
                 s.sendto(data, ('<broadcast>', udp_port))
                 print 'broadcast: ' + data, ' sent.'
                 time.sleep(10)
@@ -149,9 +155,11 @@ class Admin:
 
         while 1:
             data, wherefrom = s.recvfrom(buffer_size, 0)
+            terminal_id = data.split(':')[0]
+            terminal_status = data.split(':')[1]
             terminal_ip_address = wherefrom[0]
             print 'terminal ID : ', data, ' - ip  : ', terminal_ip_address
-            term_info = TerminalInfo(data, terminal_ip_address, not_running)
+            term_info = TerminalInfo(terminal_id, terminal_ip_address, terminal_status)
             self.terminal_map[data] = term_info
             time.sleep(0.5)
 
