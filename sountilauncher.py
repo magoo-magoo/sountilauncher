@@ -24,8 +24,6 @@ exit_msg = '\n\nquitting...'
 not_running = 'NOT RUNNING'
 running = 'RUNNING'
 
-terminal_status = not_running
-
 #
 terminal_map = dict()
 
@@ -146,27 +144,30 @@ def admin_get_mode():
 
 
 def admin_listen():
-    s = socket(AF_INET, SOCK_DGRAM)
-    s.bind(('', udp_port))
-    data, wherefrom = s.recvfrom(buffer_size, 0)
-    s.close()
-    terminal_ip_address = wherefrom[0]
-    print 'terminal ID : ', data
-    print 'Connecting to : ', terminal_ip_address
-    mode = admin_get_mode()
-    if mode == start:
-        admin_start(terminal_ip_address)
-    elif mode == stop:
-        admin_stop()
-    elif mode == test:
-        admin_test()
+    while 1:
+        s = socket(AF_INET, SOCK_DGRAM)
+        s.bind(('', udp_port))
+        data, wherefrom = s.recvfrom(buffer_size, 0)
+        s.close()
+        terminal_ip_address = wherefrom[0]
+        print 'terminal ID : ', data
+        print 'Connecting to : ', terminal_ip_address
+        time.sleep(0.5)
 
 
 def admin():
+    t = threading.Thread(target=admin_listen)
+    t.setDaemon(True)
+    t.start()
     try:
         while 1:
-            admin_listen()
-            time.sleep(5)
+            mode, term_id = admin_get_mode()
+            if mode == start:
+                admin_start(term_id)
+            elif mode == stop:
+                admin_stop()
+            elif mode == test:
+                admin_test()
     except KeyboardInterrupt:
         print exit_msg
 
