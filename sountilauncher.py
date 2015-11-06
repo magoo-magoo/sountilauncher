@@ -103,7 +103,7 @@ class Terminal:
                 data = self.id + ':' + self.status
                 s.sendto(data, ('<broadcast>', udp_port))
                 # print 'broadcast: ' + data, ' sent.'
-                time.sleep(10)
+                time.sleep(1)
         except KeyboardInterrupt:
             print exit_msg
             sys.exit(0)
@@ -187,7 +187,6 @@ class Admin:
             if terminal_id in self.terminal_map:
                 term_info.sock = self.terminal_map[terminal_id].sock
             self.terminal_map[terminal_id] = term_info
-            time.sleep(0.5)
 
     def admin(self):
         t = threading.Thread(target=self.admin_listen)
