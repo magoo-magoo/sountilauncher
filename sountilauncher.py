@@ -64,9 +64,9 @@ class Terminal:
             print('connected by', remote_host, remote_port)
             while 1:
                 data = conn.recv(buffer_size)
-                print data, 'received.'
                 if data:
                     data = str(data)
+                    print data, 'received.'
                     if data == stop and self.process is not None:
                         self.process.send_signal(SIGINT)
                         self.process.terminate()
