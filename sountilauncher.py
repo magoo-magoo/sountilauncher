@@ -64,6 +64,7 @@ class Terminal:
             print('connected by', remote_host, remote_port)
             while 1:
                 data = conn.recv(buffer_size)
+                print data, 'received.'
                 if data:
                     data = str(data)
                     if data == stop and self.process is not None:
@@ -148,7 +149,7 @@ class Admin:
 
         :type terminal_info: TerminalInfo
         """
-        pass
+        self.send(terminal_info, stop)
 
     def admin_test(self, terminal_info):
         """
@@ -164,7 +165,7 @@ class Admin:
         :rtype: tuple
         """
         while True:
-            mode = str(raw_input(start + '/' + stop + '/' + test + ': '))
+            mode = str(raw_input(start + '/' + stop + '/' + test + '/' + list_cmd + ': '))
             if mode == list_cmd:
                 return mode, None
             if len(mode.split(':')) == 2:
@@ -194,11 +195,12 @@ class Admin:
         try:
             while 1:
                 mode, term_id = self.admin_get_mode()
-                try:
-                    terminal_info = self.terminal_map[term_id]
-                except KeyError:
-                    print term_id, ' not found'
-                    continue
+                if mode != list_cmd:
+                    try:
+                        terminal_info = self.terminal_map[term_id]
+                    except KeyError:
+                        print term_id, ' not found'
+                        continue
                 if mode == list_cmd:
                     pprint(self.terminal_map)
                 if mode == start:
