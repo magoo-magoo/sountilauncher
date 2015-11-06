@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e487dd0-fabe-4e1d-81cf-d55a1cafb15f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yes.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sountilauncher.py" afterPath="$PROJECT_DIR$/sountilauncher.py" />
     </list>
@@ -38,47 +37,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sountilauncher.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sountilauncher.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sountilauncher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.76303315">
+              <caret line="83" column="53" selection-start-line="83" selection-start-column="53" selection-end-line="83" selection-end-column="53" />
               <folding>
                 <element signature="e#60#74#0" expanded="true" />
                 <element signature="e#574#762#0" expanded="true" />
                 <element signature="e#796#853#0" expanded="true" />
                 <element signature="e#909#984#0" expanded="true" />
-                <element signature="e#2560#3165#0" expanded="true" />
-                <element signature="e#3213#3239#0" expanded="true" />
-                <element signature="e#3294#4049#0" expanded="true" />
-                <element signature="e#4101#4349#0" expanded="true" />
-                <element signature="e#4400#4497#0" expanded="true" />
-                <element signature="e#4548#4619#0" expanded="true" />
-                <element signature="e#4673#5125#0" expanded="true" />
-                <element signature="e#5163#5779#0" expanded="true" />
-                <element signature="e#5810#6671#0" expanded="true" />
-                <element signature="e#6691#6820#0" expanded="true" />
+                <element signature="e#2556#3161#0" expanded="true" />
+                <element signature="e#3209#3235#0" expanded="true" />
+                <element signature="e#3290#4045#0" expanded="true" />
+                <element signature="e#4097#4345#0" expanded="true" />
+                <element signature="e#4396#4493#0" expanded="true" />
+                <element signature="e#4544#4615#0" expanded="true" />
+                <element signature="e#4669#5121#0" expanded="true" />
+                <element signature="e#5159#5775#0" expanded="true" />
+                <element signature="e#5806#6667#0" expanded="true" />
+                <element signature="e#6687#6816#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="subprocess.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python27/Lib/subprocess.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1550" column="12" selection-start-line="1550" selection-start-column="12" selection-end-line="1550" selection-end-column="12" />
-              <folding>
-                <element signature="e#57572#57654#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="yes.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="yes.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.08056872">
+            <state vertical-scroll-proportion="0.0">
               <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -108,8 +95,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/sountilauncher.py" />
         <option value="$PROJECT_DIR$/yes.py" />
+        <option value="$PROJECT_DIR$/sountilauncher.py" />
       </list>
     </option>
   </component>
@@ -755,7 +742,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446845814239</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="pzajf">
+      <created>1446846769523</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1446846769523</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -907,35 +900,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sountilauncher.py">
+    <entry file="file://$PROJECT_DIR$/yes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sountilauncher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76303315">
+          <caret line="83" column="53" selection-start-line="83" selection-start-column="53" selection-end-line="83" selection-end-column="53" />
           <folding>
             <element signature="e#60#74#0" expanded="true" />
             <element signature="e#574#762#0" expanded="true" />
             <element signature="e#796#853#0" expanded="true" />
             <element signature="e#909#984#0" expanded="true" />
-            <element signature="e#2560#3165#0" expanded="true" />
-            <element signature="e#3213#3239#0" expanded="true" />
-            <element signature="e#3294#4049#0" expanded="true" />
-            <element signature="e#4101#4349#0" expanded="true" />
-            <element signature="e#4400#4497#0" expanded="true" />
-            <element signature="e#4548#4619#0" expanded="true" />
-            <element signature="e#4673#5125#0" expanded="true" />
-            <element signature="e#5163#5779#0" expanded="true" />
-            <element signature="e#5810#6671#0" expanded="true" />
-            <element signature="e#6691#6820#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08056872">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#2556#3161#0" expanded="true" />
+            <element signature="e#3209#3235#0" expanded="true" />
+            <element signature="e#3290#4045#0" expanded="true" />
+            <element signature="e#4097#4345#0" expanded="true" />
+            <element signature="e#4396#4493#0" expanded="true" />
+            <element signature="e#4544#4615#0" expanded="true" />
+            <element signature="e#4669#5121#0" expanded="true" />
+            <element signature="e#5159#5775#0" expanded="true" />
+            <element signature="e#5806#6667#0" expanded="true" />
+            <element signature="e#6687#6816#0" expanded="true" />
           </folding>
         </state>
       </provider>
