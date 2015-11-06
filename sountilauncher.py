@@ -30,13 +30,19 @@ running = 'RUNNING'
 
 class TerminalInfo:
     def __init__(self, _id, _ip, _status):
+        """
+
+        :type _status: str
+        :type _ip: str
+        :type _id: str
+        """
         self.id = _id
         self.ip = _ip
         self.status = _status
         self.sock = None
 
     def __repr__(self):
-        return "(" + str(self.ip) +", " + str(self.status) + ")"
+        return "(" + str(self.ip) + ", " + str(self.status) + ")"
 
 
 class Terminal:
@@ -106,21 +112,31 @@ class Admin:
     def __init__(self):
         self.terminal_map = dict()
 
-    def send(self, term, message):
+    def send(self, terminal_info, message):
 
-        if term.sock is None:
+        """
+
+        :type terminal_info: TerminalInfo
+        :type message: str
+        :rtype: None
+        """
+        if terminal_info.sock is None:
             # Create a TCP/IP socket
-            term.sock = socket(AF_INET, SOCK_STREAM)
+            terminal_info.sock = socket(AF_INET, SOCK_STREAM)
 
         # Connect the socket to the port where the server is listening
-        server_address = (term.ip, tcp_port)
+        server_address = (terminal_info.ip, tcp_port)
         print >> sys.stderr, 'connecting to %s port %s' % server_address
-        term.sock.connect(server_address)
+        terminal_info.sock.connect(server_address)
         # Send data
         print >> sys.stderr, 'sending "%s"' % message
-        term.sock.sendall(message)
+        terminal_info.sock.sendall(message)
 
     def admin_start(self, term_id):
+        """
+
+        :type term_id: str
+        """
         username = raw_input('terminal username: ')
         password = getpass.getpass()
         message = start + ':' + username + ':' + password
@@ -138,7 +154,12 @@ class Admin:
     def admin_test(self):
         pass
 
-    def admin_get_mode(self):
+    @staticmethod
+    def admin_get_mode():
+        """
+
+        :rtype: tuple
+        """
         while True:
             mode = str(raw_input(start + '/' + stop + '/' + test + ': '))
             if mode == list_cmd:
@@ -160,7 +181,7 @@ class Admin:
             terminal_ip_address = wherefrom[0]
             print 'terminal ID : ', data, ' - ip  : ', terminal_ip_address
             term_info = TerminalInfo(terminal_id, terminal_ip_address, terminal_status)
-            self.terminal_map[data] = term_info
+            self.terminal_map[terminal_id] = term_info
             time.sleep(0.5)
 
     def admin(self):
