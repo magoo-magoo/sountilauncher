@@ -5,7 +5,6 @@ import time
 import sys
 from socket import *
 import threading
-
 import subprocess
 
 buffer_size = 1500
@@ -24,8 +23,8 @@ exit_msg = '\n\nquitting...'
 not_running = 'NOT RUNNING'
 running = 'RUNNING'
 
+
 #
-terminal_map = dict()
 
 
 class TerminalInfo:
@@ -93,83 +92,82 @@ class Terminal:
 
 class Admin:
     def __init__(self):
+        self.terminal_map = dict()
+
+    def admin_start(self, term_id):
+        username = raw_input('terminal username: ')
+        password = getpass.getpass()
+
+        term = self.terminal_map[term_id]
+        # Create a TCP/IP socket
+        sock = socket(AF_INET, SOCK_STREAM)
+
+        # Connect the socket to the port where the server is listening
+        server_address = (term.ip, tcp_port)
+        print >> sys.stderr, 'connecting to %s port %s' % server_address
+        sock.connect(server_address)
+        try:
+
+            # Send data
+            message = username + ':' + password
+            print >> sys.stderr, 'sending "%s"' % message
+            sock.sendall(message)
+
+            # # Look for the response
+            # amount_received = 0
+            # amount_expected = len(message)
+            #
+            # while amount_received < amount_expected:
+            #     data = sock.recv(16)
+            #     amount_received += len(data)
+            #     print >>sys.stderr, 'received "%s"' % data
+
+        finally:
+            print >> sys.stderr, 'closing socket'
+            sock.close()
+
+    def admin_stop(self):
         pass
 
+    def admin_test(self):
+        pass
 
-def admin_start(address):
-    username = raw_input('terminal username: ')
-    password = getpass.getpass()
+    def admin_get_mode(self):
+        while True:
+            mode = str(raw_input(start + '/' + stop + '/' + test + ': '))
+            if len(mode.split(':')) == 2:
+                mode = mode.split(':')[0]
+                term_id = mode.split(':')[1]
+                if mode == start or mode == stop or mode == test:
+                    return mode, term_id
 
-    # Create a TCP/IP socket
-    sock = socket(AF_INET, SOCK_STREAM)
-
-    # Connect the socket to the port where the server is listening
-    server_address = (address, tcp_port)
-    print >> sys.stderr, 'connecting to %s port %s' % server_address
-    sock.connect(server_address)
-    try:
-
-        # Send data
-        message = username + ':' + password
-        print >> sys.stderr, 'sending "%s"' % message
-        sock.sendall(message)
-
-        # # Look for the response
-        # amount_received = 0
-        # amount_expected = len(message)
-        #
-        # while amount_received < amount_expected:
-        #     data = sock.recv(16)
-        #     amount_received += len(data)
-        #     print >>sys.stderr, 'received "%s"' % data
-
-    finally:
-        print >> sys.stderr, 'closing socket'
-        sock.close()
-
-
-def admin_stop():
-    pass
-
-
-def admin_test():
-    pass
-
-
-def admin_get_mode():
-    while True:
-        mode = raw_input(start + '/' + stop + '/' + test + ': ')
-        if mode == start or mode == stop or mode == test:
-            return mode
-
-
-def admin_listen():
-    while 1:
-        s = socket(AF_INET, SOCK_DGRAM)
-        s.bind(('', udp_port))
-        data, wherefrom = s.recvfrom(buffer_size, 0)
-        s.close()
-        terminal_ip_address = wherefrom[0]
-        print 'terminal ID : ', data
-        print 'Connecting to : ', terminal_ip_address
-        time.sleep(0.5)
-
-
-def admin():
-    t = threading.Thread(target=admin_listen)
-    t.setDaemon(True)
-    t.start()
-    try:
+    def admin_listen(self):
         while 1:
-            mode, term_id = admin_get_mode()
-            if mode == start:
-                admin_start(term_id)
-            elif mode == stop:
-                admin_stop()
-            elif mode == test:
-                admin_test()
-    except KeyboardInterrupt:
-        print exit_msg
+            s = socket(AF_INET, SOCK_DGRAM)
+            s.bind(('', udp_port))
+            data, wherefrom = s.recvfrom(buffer_size, 0)
+            s.close()
+            terminal_ip_address = wherefrom[0]
+            print 'terminal ID : ', data, ' - ip  : ', terminal_ip_address
+            term_info = TerminalInfo(data, terminal_ip_address, not_running)
+            self.terminal_map[data] = term_info
+            time.sleep(0.5)
+
+    def admin(self):
+        t = threading.Thread(target=self.admin_listen)
+        t.setDaemon(True)
+        t.start()
+        try:
+            while 1:
+                mode, term_id = self.admin_get_mode()
+                if mode == start:
+                    self.admin_start(term_id)
+                elif mode == stop:
+                    self.admin_stop()
+                elif mode == test:
+                    self.admin_test()
+        except KeyboardInterrupt:
+            print exit_msg
 
 
 def usage():
@@ -181,7 +179,8 @@ def usage():
 if __name__ == '__main__':
     if len(sys.argv) >= 2:
         if sys.argv[1] == admin_name:
-            admin()
+            adm = Admin()
+            adm.admin()
         elif len(sys.argv) == 3 and sys.argv[1] == terminal_name:
             term = Terminal(sys.argv[2])
             term.terminal()
