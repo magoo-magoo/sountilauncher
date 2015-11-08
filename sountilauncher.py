@@ -52,7 +52,11 @@ class Terminal:
             while 1:
                 if conn.send("X") <= 0:
                     print 'send failed'
-                data = conn.recv(buffer_size)
+                try:
+                    data = conn.recv(buffer_size)
+                except socket.error:
+                    conn = self.accept(s, None)
+                    continue
                 if data:
                     data = str(data)
                     print data, 'received.'
