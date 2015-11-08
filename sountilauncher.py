@@ -54,7 +54,7 @@ class Terminal:
                     print 'send failed'
                 try:
                     data = conn.recv(buffer_size)
-                except socket.error:
+                except error:
                     conn = self.accept(s, None)
                     continue
                 if data:
