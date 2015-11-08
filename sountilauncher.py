@@ -73,20 +73,20 @@ class Terminal:
             print exit_msg
             sys.exit(0)
         finally:
+            self.stop()
             s.close()
 
-
-    def accept(self, sock,old_conn):
+    def accept(self, sock, old_conn):
         if old_conn is None:
             conn, (remote_host, remote_port) = sock.accept()
             print('connected by', remote_host, remote_port)
             return conn
 
-
     def stop(self):
-        self.process.send_signal(SIGINT)
-        self.process.terminate()
-        self.process = None
+        if self.process:
+            self.process.send_signal(SIGINT)
+            self.process.terminate()
+            self.process = None
 
     def start(self, username, password):
         """

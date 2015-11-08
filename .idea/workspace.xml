@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e487dd0-fabe-4e1d-81cf-d55a1cafb15f" name="Default" comment="">
+    <list default="true" id="4e487dd0-fabe-4e1d-81cf-d55a1cafb15f" name="Default" comment="pzajf">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sountilauncher.py" afterPath="$PROJECT_DIR$/sountilauncher.py" />
     </list>
@@ -40,27 +40,28 @@
       <file leaf-file-name="sountilauncher.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sountilauncher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42969984">
-              <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.77883095">
+              <caret line="84" column="12" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="12" />
               <folding>
                 <element signature="e#60#74#0" expanded="true" />
                 <element signature="e#754#829#0" expanded="true" />
-                <element signature="e#1937#2102#0" expanded="true" />
-                <element signature="e#2133#2226#0" expanded="true" />
-                <element signature="e#2277#2594#0" expanded="true" />
-                <element signature="e#2638#3246#0" expanded="true" />
-                <element signature="e#3469#3495#0" expanded="true" />
-                <element signature="e#3550#4354#0" expanded="true" />
-                <element signature="e#4406#4654#0" expanded="true" />
-                <element signature="e#4705#4802#0" expanded="true" />
-                <element signature="e#4853#4924#0" expanded="true" />
-                <element signature="e#4964#5507#0" expanded="true" />
-                <element signature="e#5556#5591#0" expanded="true" />
-                <element signature="e#5629#6311#0" expanded="true" />
-                <element signature="e#6342#7173#0" expanded="true" />
-                <element signature="e#7247#7435#0" expanded="true" />
-                <element signature="e#7469#7526#0" expanded="true" />
-                <element signature="e#7546#7675#0" expanded="true" />
+                <element signature="e#863#2052#0" expanded="true" />
+                <element signature="e#2100#2265#0" expanded="true" />
+                <element signature="e#2295#2425#0" expanded="true" />
+                <element signature="e#2476#2793#0" expanded="true" />
+                <element signature="e#2837#3445#0" expanded="true" />
+                <element signature="e#3668#3694#0" expanded="true" />
+                <element signature="e#3749#4553#0" expanded="true" />
+                <element signature="e#4605#4853#0" expanded="true" />
+                <element signature="e#4904#5001#0" expanded="true" />
+                <element signature="e#5052#5123#0" expanded="true" />
+                <element signature="e#5163#5706#0" expanded="true" />
+                <element signature="e#5755#5790#0" expanded="true" />
+                <element signature="e#5828#6510#0" expanded="true" />
+                <element signature="e#6541#7372#0" expanded="true" />
+                <element signature="e#7446#7634#0" expanded="true" />
+                <element signature="e#7668#7725#0" expanded="true" />
+                <element signature="e#7745#7874#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -775,7 +776,19 @@
       <option name="project" value="LOCAL" />
       <updated>1446849359852</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="pzajf">
+      <created>1446994690145</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1446994690145</updated>
+    </task>
+    <task id="LOCAL-00036" summary="pzajf">
+      <created>1446995065945</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1446995065946</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -939,27 +952,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sountilauncher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42969984">
-          <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.77883095">
+          <caret line="84" column="12" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="12" />
           <folding>
             <element signature="e#60#74#0" expanded="true" />
             <element signature="e#754#829#0" expanded="true" />
-            <element signature="e#1937#2102#0" expanded="true" />
-            <element signature="e#2133#2226#0" expanded="true" />
-            <element signature="e#2277#2594#0" expanded="true" />
-            <element signature="e#2638#3246#0" expanded="true" />
-            <element signature="e#3469#3495#0" expanded="true" />
-            <element signature="e#3550#4354#0" expanded="true" />
-            <element signature="e#4406#4654#0" expanded="true" />
-            <element signature="e#4705#4802#0" expanded="true" />
-            <element signature="e#4853#4924#0" expanded="true" />
-            <element signature="e#4964#5507#0" expanded="true" />
-            <element signature="e#5556#5591#0" expanded="true" />
-            <element signature="e#5629#6311#0" expanded="true" />
-            <element signature="e#6342#7173#0" expanded="true" />
-            <element signature="e#7247#7435#0" expanded="true" />
-            <element signature="e#7469#7526#0" expanded="true" />
-            <element signature="e#7546#7675#0" expanded="true" />
+            <element signature="e#863#2052#0" expanded="true" />
+            <element signature="e#2100#2265#0" expanded="true" />
+            <element signature="e#2295#2425#0" expanded="true" />
+            <element signature="e#2476#2793#0" expanded="true" />
+            <element signature="e#2837#3445#0" expanded="true" />
+            <element signature="e#3668#3694#0" expanded="true" />
+            <element signature="e#3749#4553#0" expanded="true" />
+            <element signature="e#4605#4853#0" expanded="true" />
+            <element signature="e#4904#5001#0" expanded="true" />
+            <element signature="e#5052#5123#0" expanded="true" />
+            <element signature="e#5163#5706#0" expanded="true" />
+            <element signature="e#5755#5790#0" expanded="true" />
+            <element signature="e#5828#6510#0" expanded="true" />
+            <element signature="e#6541#7372#0" expanded="true" />
+            <element signature="e#7446#7634#0" expanded="true" />
+            <element signature="e#7668#7725#0" expanded="true" />
+            <element signature="e#7745#7874#0" expanded="true" />
           </folding>
         </state>
       </provider>
