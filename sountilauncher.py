@@ -20,30 +20,18 @@ terminal_name = 'terminal'
 start = 'start'
 stop = 'stop'
 test = 'test'
+help_cmd = 'help'
 list_cmd = 'list'
 
 exit_msg = '\n\nquitting...'
 
-not_running = 'NOT RUNNING'
+not_running = 'NOT_RUNNING'
 running = 'RUNNING'
 
 
-class TerminalInfo:
-    def __init__(self, _id, _ip, _status):
-        """
-
-        :type _status: str
-        :type _ip: str
-        :type _id: str
-        """
-        self.id = _id
-        self.ip = _ip
-        self.status = _status
-        self.sock = None
-
-    def __repr__(self):
-        return "(" + str(self.ip) + ", " + str(self.status) + ")"
-
+################################################################################
+# Terminal stuff
+################################################################################
 
 class Terminal:
     def __init__(self, _id):
@@ -60,36 +48,53 @@ class Terminal:
         s.bind(('', tcp_port))
         s.listen(1)
         try:
-            conn, (remote_host, remote_port) = s.accept()
-            print('connected by', remote_host, remote_port)
+            conn = self.accept(s, None)
             while 1:
-                conn.sendall("")
+                if conn.send("X") <= 0:
+                    print 'send failed'
                 data = conn.recv(buffer_size)
                 if data:
                     data = str(data)
                     print data, 'received.'
                     if data == stop and self.process is not None:
-                        self.process.send_signal(SIGINT)
-                        self.process.terminate()
-                        self.process = None
+                        self.stop()
                     elif data == test:
                         print test
                     else:
                         parts = data.split(':')
                         if len(parts) == 3 and parts[0] == start:
-                            print 'start'
-                            username = parts[1]
-                            password = parts[2]
-                            print(username, password)
-                            self.process = subprocess.Popen(
-                                shlex.split("/usr/bin/python ./yes.py \"user: " + username + " pass: " + password + "\""))
-                            print "PID:", self.process.pid
+                            self.start(parts[1], parts[2])
                 time.sleep(0.5)
         except KeyboardInterrupt:
             print exit_msg
             sys.exit(0)
         finally:
             s.close()
+
+
+    def accept(self, sock,old_conn):
+        if old_conn is None:
+            conn, (remote_host, remote_port) = sock.accept()
+            print('connected by', remote_host, remote_port)
+            return conn
+
+
+    def stop(self):
+        self.process.send_signal(SIGINT)
+        self.process.terminate()
+        self.process = None
+
+    def start(self, username, password):
+        """
+
+        :type password: str
+        :type username: str
+        """
+        print 'start'
+        print(username, password)
+        cmd = "/usr/bin/python ./yes.py \"user: {0} pass: {1}\"".format(username, password)
+        self.process = subprocess.Popen(shlex.split(cmd))
+        print "PID:", self.process.pid
 
     def terminal_broadcast(self):
         s = socket(AF_INET, SOCK_DGRAM)
@@ -108,6 +113,11 @@ class Terminal:
         except KeyboardInterrupt:
             print exit_msg
             sys.exit(0)
+
+
+################################################################################
+# Admin stuff
+################################################################################
 
 
 class Admin:
@@ -164,14 +174,16 @@ class Admin:
         """
         pass
 
-    @staticmethod
-    def admin_get_mode():
+    def admin_get_mode(self):
         """
 
         :rtype: tuple
         """
         while True:
             mode = str(raw_input(start + '/' + stop + '/' + test + '/' + list_cmd + ': '))
+            if mode == help_cmd:
+                self.show_help()
+                continue
             if mode == list_cmd:
                 return mode, None
             if len(mode.split(':')) == 2:
@@ -179,6 +191,10 @@ class Admin:
                 mode = mode.split(':')[0]
                 if mode == start or mode == stop or mode == test:
                     return mode, term_id
+
+    @staticmethod
+    def show_help():
+        print '\tcmd:ID\n ex : \n start:42'
 
     def admin_listen(self):
         s = socket(AF_INET, SOCK_DGRAM)
@@ -188,12 +204,11 @@ class Admin:
             data, wherefrom = s.recvfrom(buffer_size, 0)
             terminal_id = data.split(':')[0]
             terminal_status = data.split(':')[1]
-            terminal_ip_address = wherefrom[0]
-            # print 'terminal ID : ', data, ' - ip  : ', terminal_ip_address
-            term_info = TerminalInfo(terminal_id, terminal_ip_address, terminal_status)
+            terminal_ip = wherefrom[0]
+            term_info = TerminalInfo(terminal_id, terminal_ip, terminal_status)
             if self.terminal_map.has_key(terminal_id):
                 self.terminal_map[terminal_id].id = terminal_id
-                self.terminal_map[terminal_id].ip = terminal_ip_address
+                self.terminal_map[terminal_id].ip = terminal_ip
                 self.terminal_map[terminal_id].status = terminal_status
             else:
                 self.terminal_map[terminal_id] = term_info
@@ -221,6 +236,23 @@ class Admin:
                     self.admin_test(terminal_info)
         except KeyboardInterrupt:
             print exit_msg
+
+
+class TerminalInfo:
+    def __init__(self, _id, _ip, _status):
+        """
+
+        :type _status: str
+        :type _ip: str
+        :type _id: str
+        """
+        self.id = _id
+        self.ip = _ip
+        self.status = _status
+        self.sock = None
+
+    def __repr__(self):
+        return "(" + str(self.ip) + ", " + str(self.status) + ")"
 
 
 def usage():
