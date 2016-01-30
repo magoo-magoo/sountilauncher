@@ -96,7 +96,7 @@ class Terminal:
         """
         print 'start'
         print(username, password)
-        cmd = "/usr/bin/python ./yes.py \"user: {0} pass: {1}\"".format(username, password)
+        cmd = "/home/pi/dev/sountipunch/eip/EO-Borne/DEBIAN/usr/bin/EO-Borne/ValidationModule/test_terminal -v -u {0} -p {1}".format(username, password)
         self.process = subprocess.Popen(shlex.split(cmd))
         print "PID:", self.process.pid
 
